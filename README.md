@@ -1,2 +1,2 @@
 # mason
-MATT MaSoN's abjad package
+Matt Mason's `abjad` package
