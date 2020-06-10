@@ -1,0 +1,83 @@
+\version "2.19.84"
+\language "english"
+
+
+% Ottava and octave movements
+\new Staff {
+  a2 b
+  \ottava #-2
+  a2 b
+  \ottava #-1
+  a2 b
+  \ottava #0
+  as b \ottava #1
+}
+
+%Ottava text
+% set the style and then write in the applicable notes.
+{
+  \ottava #1
+  \set Staff.ottavation = #"8"
+  c''1
+  \ottava #0
+  c'1
+  \ottava #1
+  \set Staff.ottavation = #"Nonsensical"
+  c''4
+}
+
+
+% adding an ottava marking to a single voice
+% << indicate inclusiveness
+
+%THIS DOES NOT WORK - FROM LILYPOND SITE
+\new Staff {
+  \time 4/2
+  \clef bass
+  << { <g d'>1~ q2 <c' e'> }
+  \\
+    {
+      r2 r4
+      \set Staff.ottavation = #"Drop Lower"
+      \once \override Staff.OttavaBracket.direction = #DOWN
+      % Bracket overrides
+      \set Voice.middleCPosition = #(+ 6 7)
+      <b,,, b,,>4 ~ |
+      q2
+      \unset Staff.ottavation
+      \unset Voice.middleCPosition
+      <c e>2
+    }
+  >>
+}
+
+% 4 Staff Ambitus Lines and
+\layout {
+  \context {
+    \Voice
+    \consists "Ambitus_engraver"
+  }
+}
+
+\new Staff {
+  \time 2/4
+  c'4 g''
+}
+
+\new Staff {
+  \time 2/4
+  \override AmbitusLine.gap = #0
+  c'4 g''
+}
+
+\new Staff {
+  \time 2/4
+  \override AmbitusLine.gap = #1
+  c'4 g''
+}
+
+\new Staff {
+  \time 2/4
+  \override AmbitusLine.gap = #1.5
+  c'4 g''
+}

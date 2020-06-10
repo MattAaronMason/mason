@@ -1,8 +1,22 @@
 \version "2.19.84"
 \language "english"
 
-\relative {
-  a'1
-  a2 a4 a8 b
-  a16 b a gs a32 a a a a a b a gs2
+\new Staff {
+  \time 4/2
+  \clef bass
+  << { <g d'>1~ q2 <c' e'> }
+  \\
+    {
+      r2 r4
+      \set Staff.ottavation = #"Drop Lower"
+      \once \override Staff.OttavaBracket.direction = #DOWN
+      % Bracket overrides
+      \set Voice.middleCPosition = #(+ 6 7)
+      <b,,, b,,>4 ~ |
+      q2
+      \unset Staff.ottavation
+      \unset Voice.middleCPosition
+      <c e>2
+    }
+  >>
 }
