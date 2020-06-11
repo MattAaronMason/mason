@@ -13,10 +13,10 @@ before_install:
     # name working directory:
     - LOCATION=`pwd`
 
-    # alias package:
-    - PACKAGE=`pwd`/evans
-    - export PYTHONPATH=$PACKAGE:$PYTHONPATH
-    - export PATH=$PACKAGE/scr/:$PATH
+    # # alias LOCATION:
+    # - LOCATION=`pwd`/evans
+    # - export PYTHONPATH=$LOCATION:$PYTHONPATH
+    # - export PATH=$LOCATION/scr/:$PATH
 
     # upgrade pip:
     - pip install --upgrade pip
@@ -56,7 +56,7 @@ before_install:
     - export PATH=$EVANS/evans/scr/:$PATH
     - export MYPYPATH=$MYPYPATH:$EVANS
     - ln -s $EVANS/evans/dotfiles/.mypy.ini ~/.mypy.ini
-    
+
     # clone & install baca:
     - BACA=/tmp/baca
     - git clone https://github.com/trevorbaca/baca.git $BACA
@@ -72,18 +72,18 @@ before_install:
     - echo $PYTHONPATH
     - echo $TRAVIS_BUILD_DIR
     - ls
-    - echo $PACKAGE
+    - echo $LOCATION
     - which black-check
     - which evans-doctest
     - which flake8-check
     - which isort-check
 
 script:
-    - black-check $PACKAGE
-    - flake8-check $PACKAGE
-    - isort-check $PACKAGE
-    - evans-doctest $PACKAGE
-    # - py.test -rf $PACKAGE/test.py
+    - black-check $LOCATION
+    - flake8-check $LOCATION
+    - isort-check $LOCATION
+    - evans-doctest $LOCATION
+    # - py.test -rf $LOCATION/test.py
 
 # after_success:
 #     - pip install --quiet coveralls
