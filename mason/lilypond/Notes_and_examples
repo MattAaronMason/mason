@@ -81,3 +81,13 @@
   \override AmbitusLine.gap = #1.5
   c'4 g''
 }
+
+%proportional notation and layout
+\layout {
+  \context {
+    \Score
+    \override SpacingSpanner.strict-note-spacing = ##t
+    \override SpacingSpanner.uniform-stretching = ##t
+    proportionalNotationDuration = #(ly:make-moment 1 8)
+  }
+}
