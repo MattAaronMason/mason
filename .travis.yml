@@ -79,10 +79,10 @@ before_install:
     - which isort-check
 
 script:
-    - black-check $LOCATION
-    - flake8-check $LOCATION
-    - isort-check $LOCATION
-    - evans-doctest $LOCATION
+    - black-check .
+    - flake8-check .
+    - isort-check .
+    - evans-doctest .
     # - py.test -rf $LOCATION/test.py
 
 # after_success:
