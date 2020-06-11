@@ -6,7 +6,7 @@ def return_pitch_class_set(pitches):
     """
     pitches = [i % 12 for i in pitches]
     pitches = list(set(pitches))
-    if pitches[1] - pitches [0] > pitches[-1] - pitches[-2]:
+    if pitches[1] - pitches[0] > pitches[-1] - pitches[-2]:
         pitches.reverse()
         intervals = [pitches[0] - i for i in pitches]
     else:
