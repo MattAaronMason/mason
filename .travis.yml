@@ -80,8 +80,8 @@ before_install:
 
 script:
     - black-check .
-    - flake8-check .
-    - isort-check .
+#    - flake8-check .
+#    - isort-check .
     - evans-doctest .
     # - py.test -rf $LOCATION/test.py
 
