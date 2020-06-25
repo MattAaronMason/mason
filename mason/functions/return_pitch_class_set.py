@@ -1,6 +1,6 @@
 def return_pitch_class_set(pitches):
     """
-    return_pitch_class_set([15, 10, 8, -5, 3, 11])
+    >>> mason.return_pitch_class_set([15, 10, 8, -5, 3, 11])
     [0, 1, 3, 4, 8]
 
     """
