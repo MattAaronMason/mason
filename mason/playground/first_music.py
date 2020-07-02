@@ -1,9 +1,12 @@
 import abjad
+import abjadext.rmakers
 
+#divisions = [(4, 4), (11, 8), (9, 8), (2, 4)]
 time_signatures = [
     abjad.TimeSignature((4, 4)),
-    abjad.TimeSignature((6, 8)),
-    abjad.TimeSignature((4, 4)),
+    abjad.TimeSignature((11, 8)),
+    abjad.TimeSignature((9, 4)),
+
 ]
 
 pitches = [0, 4.5, 8, 7, None, 3, 1, 9, 2]
