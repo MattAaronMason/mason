@@ -2,9 +2,9 @@ import abjad
 import math
 from abjadext import rmakers
 
-tuples = [(3, 4), (7, 8), (3, 8), (4, 4), (4, 4), (4, 4), (5, 16), (3, 4), (3, 4), (7, 16)]
+tuples = [(3, 4), (7, 8), (3, 8), (4, 4), (4, 4), (4, 4), (5, 16), (3, 4), (3, 4), (7, 16), (3, 4)]
 
-tuples = tuples + tuples[::-1]
+tuples = tuples + tuples[::-1] + tuples[4:]
 
 time_signatures = [abjad.TimeSignature(x) for x in tuples]
 
@@ -45,14 +45,17 @@ stack3 = rmakers.stack(
     rmakers.before_grace_container([1],
         abjad.select()
         .tuplets()
-        .map(abjad.select().logical_ties(pitched=True).exclude([0, 1, 3, 4, 5])),)
+        .map(abjad.select().logical_ties(pitched=True).exclude([0, 1, 3, 4, 5])),),
+    rmakers.rewrite_dots(abjad.select().tuplets().get([1])),
+    rmakers.trivialize(abjad.select().tuplets()), rmakers.extract_trivial(abjad.select().tuplets()), rmakers.rewrite_rest_filled(abjad.select().tuplets()), rmakers.rewrite_sustained(abjad.select().tuplets()),
 )
 
 selection1 = stack([time_signatures[0]])
 state1 = stack.state
-selection1_3 = stack([time_signatures[1]], previous_state=state1)
+selection1_3 = stack3([time_signatures[1]])
+state3 = stack3.state
 selection1_6 = stack([time_signatures[2]], previous_state=state1)
-selection1_9 = stack3([time_signatures[3]])
+selection1_9 = stack3([time_signatures[3]], previous_state=state3)
 selection2 = stack2([time_signatures[4]])
 state2 = stack2.state
 selection3 = stack([time_signatures[5]], previous_state=state1)
@@ -73,10 +76,14 @@ for i in range(len(ties)):
     multiplied_val = i * 0.5
     sin_val = math.sin((2 * math.sin(i * math.sin(1.1))))
     added_val = multiplied_val + sin_val
-    if 6 < added_val:
-        added_val -= 8
+    if 16 < added_val:
+        added_val -= 10
+    if 20 < i:
+        added_val -= 5
+    if 30 < i:
+        added_val = math.sin(added_val * math.sin(i * -0.5)) + (0.1 * i)
     pitch = abjad.NumberedPitch(added_val)
-    pitch -= 12
+    pitch -= 16
     pitches.append(pitch)
 
 zipped = zip(pitches, abjad.select(staff).logical_ties(pitched=True))

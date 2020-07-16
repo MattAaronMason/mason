@@ -33,6 +33,10 @@
             s1 * 3/4
             \time 7/16
             s1 * 7/16
+            \time 3/4
+            s1 * 3/4
+            s1 * 3/4
+            \time 7/16
             s1 * 7/16
             \time 3/4
             s1 * 3/4
@@ -49,151 +53,214 @@
             s1 * 7/8
             \time 3/4
             s1 * 3/4
+            \time 4/4
+            s1 * 1
+            s1 * 1
+            \time 5/16
+            s1 * 5/16
+            \time 3/4
+            s1 * 3/4
+            s1 * 3/4
+            \time 7/16
+            s1 * 7/16
+            \time 3/4
+            s1 * 3/4
         }
         \context Staff = "staffname"
         {
             \clef "bass"
-            c16
-            dqf8.
+            af,16
+            aqs,8.
             r4
-            d8.
-            d16
+            bf,8.
+            bf,16
             \tweak text #tuplet-number::calc-fraction-text
-            \times 7/12 {
-                cs8
-                dqf4.
-                r2
-                d4.
-                eqf8
-            }
-            f32
-            fqs16.
-            r8
-            fs16.
-            f32
-            \tweak text #tuplet-number::calc-fraction-text
-            \times 1/1 {
-                f2
-                fqs4.
+            \times 7/8 {
+                a,2
+                aqs,4.
                 \grace {
-                    b,8
+                    bf,8
                 }
-                cqs8
+                bqs,8
             }
+            cs32
+            dqf16.
+            r8
+            d16.
+            cs32
+            cs2
+            dqf4.
+            \grace {
+                ef8
+            }
+            eqs8
             \times 8/9 {
-                cs4.
-                cs8
-                cqs2
+                f4.
+                f8
+                eqs2
                 r8
             }
             \times 2/3 {
-                cqs8
+                eqs8
+                f4.
+                r2
                 cs4.
+                ef8
+            }
+            \tweak text #tuplet-number::calc-fraction-text
+            \times 1/1 {
+                eqf4
+                ~
+                eqf16
+            }
+            \tweak text #tuplet-number::calc-fraction-text
+            \times 3/4 {
+                e2
+                ef4.
+                \grace {
+                    ef8
+                }
+                eqf8
+            }
+            \tweak text #tuplet-number::calc-fraction-text
+            \times 3/4 {
+                f2
+                gqf4.
+                \grace {
+                    g8
+                }
+                b,8
+            }
+            \tweak text #tuplet-number::calc-fraction-text
+            \times 7/8 {
+                b,4
+                c8.
+                \grace {
+                    c8
+                }
+                cqs16
+            }
+            \tweak text #tuplet-number::calc-fraction-text
+            \times 1/1 {
+                c4..
+                ~
+            }
+            \tweak text #tuplet-number::calc-fraction-text
+            \times 6/7 {
+                c4.
+                cs4.
+                b,8
+            }
+            \times 2/3 {
+                b,2
+                r8
+                cqs2
+            }
+            \tweak text #tuplet-number::calc-fraction-text
+            \times 3/4 {
+                cs2
+                cs4.
+                \grace {
+                    cs8
+                }
+                cqs8
+            }
+            \tweak text #tuplet-number::calc-fraction-text
+            \times 6/11 {
+                c1
+                cs4.
+            }
+            \tweak text #tuplet-number::calc-fraction-text
+            \times 6/7 {
+                d8
+                d2
+                r8
+                c8
+                ~
+            }
+            \tweak text #tuplet-number::calc-fraction-text
+            \times 1/1 {
+                c4
+                ~
+                c16
+                ~
+            }
+            \times 8/13 {
+                c8
+                d1
+                ~
+                d8
+                d4.
+            }
+            \times 8/9 {
+                cs8
+                d2
+                r8
+                d4.
+            }
+            cqs32
+            d16.
+            r8
+            d16.
+            cs32
+            \tweak text #tuplet-number::calc-fraction-text
+            \times 7/12 {
+                ef8
+                ef4.
+                r2
+                cs4.
+                d8
+            }
+            cs16
+            ef8.
+            r4
+            ef8.
+            dqs16
+            \times 2/3 {
+                ef8
+                ef4.
                 r2
                 d4.
                 e8
             }
-            \tweak text #tuplet-number::calc-fraction-text
-            \times 1/1 {
-                eqs4
-                ~
-                eqs16
-            }
-            \tweak text #tuplet-number::calc-fraction-text
-            \times 3/4 {
-                f2
+            \times 2/3 {
+                d8
+                eqf4.
+                r2
                 e4.
-                \grace {
-                    e8
-                }
                 eqs8
             }
             \tweak text #tuplet-number::calc-fraction-text
-            \times 3/4 {
-                fs2
-                gqs4.
-                \grace {
-                    af8
-                }
-                aqf8
-            }
-            \tweak text #tuplet-number::calc-fraction-text
-            \times 7/8 {
-                gqs4
-                gqs8.
-                \grace {
-                    af8
-                }
-                a16
-            }
-            \tweak text #tuplet-number::calc-fraction-text
-            \times 1/1 {
-                b4..
-                ~
-            }
-            \tweak text #tuplet-number::calc-fraction-text
-            \times 7/9 {
-                b4.
-                bqs8.
-                ~
-            }
-            \times 2/3 {
-                bqs8.
-                c'8
-                b2
+            \times 5/6 {
+                dqs32
+                ef16.
                 r8
-                b8.
+                e16.
+                f32
             }
-            \tweak text #tuplet-number::calc-fraction-text
-            \times 5/8 {
-                bqs4
-                cqs'8.
-                \grace {
-                    dqs'8
-                }
-                ef'16
-            }
-            eqf'4
-            ~
-            eqf'16
-            ~
-            \times 8/9 {
-                eqf'2
-                ~
-                eqf'8.
-                ef'4.
-                dqs'16
-                ~
-            }
-            \times 8/11 {
-                dqs'16
-                ef'2
-                r8
-                e'2
-                ~
-                e'8
-                fs'16
-                ~
-            }
-            \times 8/13 {
-                fs'1
-                ~
-                fs'16
-                gqf'4.
-                g'8
-                fs'16
-                ~
-            }
-            \tweak text #tuplet-number::calc-fraction-text
-            \times 3/4 {
-                fs'4..
-                r16
-            }
-            fs'16
-            gqf'8.
+            e16
+            eqf8.
             r4
-            g'8.
-            a'16
+            ef8.
+            eqf16
+            e16
+            eqf8.
+            r4
+            f8.
+            e16
+            \tweak text #tuplet-number::calc-fraction-text
+            \times 7/12 {
+                fqs16
+                e8.
+                r4
+                e8.
+                f16
+            }
+            fs16
+            fqs8.
+            r4
+            f8.
+            fs16
         }
     >>
 } %! abjad.LilyPondFile._get_formatted_blocks()
